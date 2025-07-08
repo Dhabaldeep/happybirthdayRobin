@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Rabin! (Don't forget the cake!)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(to top right, #fceabb, #f8b500);
+      color: #333;
+      min-height: 100vh; /* Ensures background covers full height */
+      text-align: center;
+      position: relative;
+      /* Removed: display: flex, justify-content, align-items from body */
+      /* Body now acts as the full-page background and can expand */
+    }
+
+    /* New wrapper to handle centering and its own scrolling if content overflows */
+    .main-content-wrapper {
+      display: flex;
+      flex-direction: column; /* Stack items vertically */
+      justify-content: center; /* Center content vertically */
+      align-items: center; /* Center content horizontally */
+      min-height: 100vh; /* Ensures this wrapper takes at least full viewport height */
+      width: 100%; /* Ensures it spans full width */
+      overflow-y: auto; /* Adds scrollbar if content overflows vertically */
+      position: relative; /* For z-index to work correctly with balloons */
+      z-index: 1; /* Keep content above balloons */
+    }
+
+    .container {
+      max-width: 600px;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+      z-index: 2; /* Ensure container is above balloons */
+      margin: 20px auto; /* Add some vertical margin to ensure it's not right at the edge */
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3rem;
+      color: #ff4081;
+      margin-bottom: 1rem;
+      animation: wobble 0.8s infinite alternate;
+    }
+
+    img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid #fff;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    footer {
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    .balloon {
+      position: fixed; /* Use fixed so they float relative to viewport, not scroll */
+      width: 40px;
+      height: 60px;
+      background: radial-gradient(circle at 30% 30%, #ff4081, #c2185b);
+      border-radius: 50% 50% 45% 45%;
+      animation: float 6s infinite ease-in-out;
+      z-index: 0; /* Keep balloons behind the content wrapper */
+    }
+
+    .balloon::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      width: 2px;
+      height: 20px;
+      background: #888;
+      transform: translateX(-50%);
+    }
+
+    .balloon:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .balloon:nth-child(2) { left: 30%; animation-delay: 2s; }
+    .balloon:nth-child(3) { left: 50%; animation-delay: 4s; }
+    .balloon:nth-child(4) { left: 70%; animation-delay: 1s; }
+    .balloon:nth-child(5) { left: 90%; animation-delay: 3s; }
+
+    @keyframes float {
+      0% { bottom: -100px; opacity: 0; }
+      50% { opacity: 1; }
+      100% { bottom: 120%; opacity: 0; }
+    }
+
+    @keyframes wobble {
+      0% { transform: rotate(0deg); }
+      25% { transform: rotate(1deg); }
+      75% { transform: rotate(-1deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      .container {
+        margin: 10px auto; /* Reduce margin on smaller screens */
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+  <div class="balloon"></div>
+
+  <div class="main-content-wrapper">
+    <div class="container">
+      <h1>Happy Birthday, Rabin! Still older than yesterday, younger than tomorrow! 🎉</h1>
+      <img src="./rabin.jpg" alt="Birthday Boy Rabin (probably up to no good)" />
+      <p>
+        Wishing you a day filled with questionable decisions, unsolicited advice, and enough cake to induce a proper food coma. May your year ahead be as awesome as you pretend to be! Keep smiling (and maybe don't count the candles)! 🌟🎂🎁
+      </p>
+      <p>
+        And finally, a very happy birthday from all of us! May your Wi-Fi always be strong, your battery always charged, and your coffee always hot. Cheers to many more years of awesomeness (and perhaps less questionable decisions)!
+      </p>
+<footer>
+  From 10511224005 (the legend) 💥🎓🎂
+</footer>
+
+    </div>
+  </div>
+
+</body>
+</html>
